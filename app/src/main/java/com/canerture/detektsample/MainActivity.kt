@@ -13,6 +13,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.canerture.detektsample.ui.theme.DetektSampleTheme
 
+private const val ZERO = 0
+private const val ONE = 1
+private const val TWO = 2
+private const val THREE = 3
+private const val FOUR = 4
+private const val FIVE = 5
+private const val TEN = 10
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +34,7 @@ class MainActivity : ComponentActivity() {
                     )
                 }
 
-                exampleComplexFunction(5)
+                exampleComplexFunction(FIVE)
             }
         }
     }
@@ -34,10 +42,10 @@ class MainActivity : ComponentActivity() {
 
 fun exampleComplexFunction(input: Int): String {
     val result = when {
-        input > 0 && input % 2 == 0 -> "Positive Even"
-        input > 0 && input % 2 != 0 -> "Positive Odd"
-        input < 0 && input % 2 == 0 -> "Negative Even"
-        input < 0 && input % 2 != 0 -> "Negative Odd"
+        input > ZERO && input % TWO == ZERO -> "Positive Even "
+        input > ZERO && input % TWO != ZERO -> "Positive Odd"
+        input < ZERO && input % TWO == ZERO -> "Negative Even"
+        input < ZERO && input % TWO != ZERO -> "Negative Odd"
         else -> "Zero"
     }
 
@@ -49,17 +57,17 @@ fun exampleComplexFunction(input: Int): String {
 
 private fun printNumberDescription(input: Int) {
     when (input) {
-        1 -> println("One")
-        2 -> println("Two")
-        3 -> println("Three")
-        4 -> println("Four")
-        5 -> println("Five")
+        ONE -> println("One")
+        TWO -> println("Two")
+        THREE -> println("Three")
+        FOUR -> println("Four")
+        FIVE -> println("Five")
         else -> println("Other")
     }
 }
 
 private fun printComparisonToInput(input: Int) {
-    for (i in 1..10) {
+    for (i in ONE..TEN) {
         when {
             i == input -> println("Match: $i")
             i < input -> println("Less than input: $i")
